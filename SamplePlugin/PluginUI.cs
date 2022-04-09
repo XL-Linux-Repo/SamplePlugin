@@ -2,6 +2,7 @@
 using System;
 using System.Numerics;
 
+#pragma warning disable CA1416
 namespace SamplePlugin
 {
     // It is good to have this be disposable in general, in case you ever need it
