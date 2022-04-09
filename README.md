@@ -1,8 +1,8 @@
 # SamplePlugin
 
-Simple example plugin for Dalamud.
+Simple example plugin for Dalamud, but adjusted slightly to serve as a jumpstart for building from Linux.
 
-This is not designed to be the simplest possible example, but it is also not designed to cover everything you might want to do. For more detailed questions, come ask in [the Discord](https://discord.gg/3NMcUV5).
+This is not designed to be the simplest possible example, but it is also not designed to cover everything you might want to do. For more detailed questions, go ask in [the XL Discord](https://discord.gg/3NMcUV5).
 
 ## Main Points
 
@@ -26,14 +26,19 @@ The intention is less that any of this is used directly in other projects, and m
 ## To Use
 ### Building
 
-1. Open up `SamplePlugin.sln` in your C# editor of choice (likely [Visual Studio 2022](https://visualstudio.microsoft.com) or [JetBrains Rider](https://www.jetbrains.com/rider/)).
-2. Build the solution. By default, this will build a `Debug` build, but you can switch to `Release` in your IDE.
-3. The resulting plugin can be found at `SamplePlugin/bin/x64/Debug/SamplePlugin.dll` (or `Release` if appropriate.)
+1. Clone the repository
+2. Open up `SamplePlugin.sln` in your C# editor of choice (likely [Visual Studio 2022](https://visualstudio.microsoft.com) or [JetBrains Rider](https://www.jetbrains.com/rider/)).
+3. Create a symbolic link to the XIV launch folder, or adjust your OutputPath and DalamudLibPath accordingly.
+    * Symbolic link would be, while in the root of your project folder, `ln -s <XIVLauncherFolderPath> ./XIVLauncher`
+4. Build the solution. By default, this should build to `./XIVLauncher/devPlugins/SamplePlugin` (assuming your path is set correctly).
+    * This will also build to `SamplePlugin/obj/x64/Debug/SamplePlugin.dll` (or `Release` if appropriate.)
 
 ### Activating in-game
 
 1. Launch the game and use `/xlsettings` in chat or `xlsettings` in the Dalamud Console to open up the Dalamud settings.
     * In here, go to `Experimental`, and add the full path to the `SamplePlugin.dll` to the list of Dev Plugin Locations.
+    * NOTE: This path will be Windows file path format, with `drive_c` acting as your `C:\`.
+        * This means your path should be `C:\users` rather than `drive_c\users`.
 2. Next, use `/xlplugins` (chat) or `xlplugins` (console) to open up the Plugin Installer.
     * In here, go to `Dev Tools > Installed Dev Plugins`, and the `SamplePlugin` should be visible. Enable it.
 3. You should now be able to use `/pmycommand` (chat) or `pmycommand` (console)!
