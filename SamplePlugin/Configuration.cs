@@ -2,6 +2,7 @@
 using Dalamud.Plugin;
 using System;
 
+#pragma warning disable CA1416
 namespace SamplePlugin
 {
     [Serializable]

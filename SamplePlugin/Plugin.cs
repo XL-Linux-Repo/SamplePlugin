@@ -4,6 +4,7 @@ using Dalamud.Plugin;
 using System.IO;
 using System.Reflection;
 
+#pragma warning disable CA1416
 namespace SamplePlugin
 {
     public sealed class Plugin : IDalamudPlugin
