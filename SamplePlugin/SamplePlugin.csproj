@@ -10,14 +10,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Platforms>x64</Platforms>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>$(AppData)\XIVLauncher\devPlugins\SamplePlugin\</OutputPath>
+    <OutputPath>$(XIVLauncher)/devPlugins/SamplePlugin</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +31,8 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+    <XIVLauncher>../../XIVLauncher</XIVLauncher>
+    <DalamudLibPath>$(XIVLauncher)/addon/Hooks/dev/</DalamudLibPath>
   </PropertyGroup>
 
   <ItemGroup>
